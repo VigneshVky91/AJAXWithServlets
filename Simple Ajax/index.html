@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <script>
+      function loadDoc()
+      {
+          var xhr = new XMLHttpRequest();
+          //xhr.open('GET','https://vigneshvky91.github.io/jsondata.json',true);
+          xhr.open('GET','https://vigneshvky91.github.io/jsondata.json',true);
+          xhr.send();
+          xhr.onload = function(){
+          //  document.getElementById("content").innerText = JSON.parse(this.responseText)[1].name;
+          
+          var resp = this.responseText;
+          document.getElementById('content').innerText = JSON.parse(resp)[0].name; 
+
+          }  
+      }
+      
+    </script>
+  </head>
+  <body>
+    <button onclick="loadDoc()">Click</button>
+    <div id="content">Dummy Text</div>
+  </body>
+</html>
